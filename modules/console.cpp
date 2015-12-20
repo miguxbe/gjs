@@ -185,7 +185,7 @@ gjs_console_interact(JSContext *context,
         buffer = g_string_new("");
         do {
             if (!gjs_console_readline(context, &temp_buf, file,
-                                      startline == lineno ? "gjs> " : ".... ")) {
+                                      startline == lineno ? "\033[1mgjs >\033[0m " : ".... ")) {
                 eof = JS_TRUE;
                 break;
             }
